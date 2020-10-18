@@ -1,11 +1,16 @@
+const dotenv = require("dotenv")
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config()
+}
 module.exports = {
   siteMetadata: {
-    title: `KUET MTE 2K19 PROJECT`,
-    description: `A web site for centralizing our study assets and increasing productivity`,
+    title: `KUET MTE 19 PROJECT`,
+    description: `A place for centralizing study materials, & increase ease of use of online class`,
     author: `@omorshahriar`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-theme-ui",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,6 +30,15 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `odc1nkol19ml`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: `preview.contentful.com`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
