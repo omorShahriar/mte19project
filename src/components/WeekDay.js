@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import React from 'react'
 
-import { useState,useEffect,useRef } from 'react'
+import { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import fadeTransition from './fadeTransition.module.css'
 import style from './weekday.module.css'
@@ -17,7 +17,7 @@ const WeekDay = ({info}) => {
             
             <div className={`${style.test} ${open && style.collapseOpen}` } sx={{textAlign:'center',backgroundColor:'background',height:50,color:'text'}}>
             
-                <h3  className={`${style.header} ${open && style.headerShadow}`} onClick={() => setOpen(!open)}>{info.day}</h3>
+                <button  className={`${style.header} ${open && style.headerShadow}`} onClick={() => setOpen(!open)}>{info.day}</button>
                 <CSSTransition in={open} timeout={{
                     enter: 100,
                     exit: 100,

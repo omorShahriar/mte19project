@@ -40,23 +40,40 @@
   user-select: none;
   cursor: pointer;
   margin: 0;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .headerShadow {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 .collapseOpen {
   transform-origin: top center;
   height: 350px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .courseContainer {
   position: absolute;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: center;
   z-index: 2;
   top: 55px;
   margin-top: 30px;
   width: 100%;
   padding: 0 50px;
+}
+
+@media (max-width: 800px) {
+  .courseContainer {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  .collapseOpen {
+    height: 600px !important;
+  }
 }
