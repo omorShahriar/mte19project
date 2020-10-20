@@ -44,7 +44,7 @@ const Header = ({ theme, changeTheme, siteTitle }) => (
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/digital-routine">Digital Routine</StyledLink>
         <StyledLink to="/page-2"> experiment page</StyledLink>
-        <Toggle theme={theme} changeTheme={changeTheme} />
+        <Toggle changeTheme={changeTheme} />
       </NavWrapper>
     </div>
   </HeaderContainer>

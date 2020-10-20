@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
 import React from "react"
 import { useState } from "react"
 
@@ -42,7 +40,6 @@ const Layout = ({ children }) => {
   `)
 
   const [theme, themeToggler, mountedComponent] = useDarkMode()
-
   const themeMode = theme === "light" ? lightTheme : darkTheme
   if (!mountedComponent) return <div />
   return (
