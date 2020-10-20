@@ -1,65 +1,72 @@
-/** @jsx jsx */
-import {  jsx } from "theme-ui"
+import React from 'react'
 import { Link } from "gatsby"
+import styled from "styled-components"
 
+const LinkWrapper = styled.div`
+   display: inline-block;
+    position:relative;
+`
+const UnderLayer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 50px;
+  background-color: #1A8FE3;
+  border-radius: 15px 5px;
+  box-shadow:inset -5px -5px 15px 5px rgba(0, 0, 0, 0.25);
+`
+
+const NavLInk = styled.a`
+  text-align: center;
+      color: #f2f2f2;
+     display: inline-block;
+      text-decoration: none;
+      background-color: #333;
+             border-radius:15px 5px;
+      font-size:1rem;
+      width: 150px;
+      height:50px;
+      padding:15px 0 10px 0;
+      margin-right: 20px;
+      transition: all 0.2s ease-in;
+      transform-origin: 0 100%;
+      position:relative;
+      z-index:1;
+      &:hover {
+        
+         transform: skewY(-5deg);
+        transform-origin:  0 100%;
+        color:#1A8FE3;
+      }
+      
+      &.active {
+        color: #1A8FE3;
+        transform: skewY(-3deg);
+        transform-origin: bottom left;
+        
+      }
+
+`
 export default props => (
-  <div sx={{
-    display: 'inline-block',
-    position:'relative'
-  }}>
-     <div sx={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: 150,
-        height: 50,
-        backgroundColor: "primary",
-        borderRadius: '15px 5px',
-        boxShadow:'inset -5px -5px 15px 5px rgba(0, 0, 0, 0.25)'
-    }}></div>
-   
-      <Link
-    to={props.to}
-    activeClassName="active"
-    sx={{
-      textAlign: 'center',
-      color: "background",
-      
-     display: 'inline-block',
-      textDecoration: "none",
-        backgroundColor: "text",
-             borderRadius:'15px 5px',
-      fontSize:'1rem',
-      width: 150,
-      height:50,
-      py: 15,
-      px: 10,
-            mr: 20,
-      transition: "all 0.2s ease-in",
-       transformOrigin: ' 0 100%',
-      position: 'relative',
-      zIndex:1,
-      "&:hover": {
-        
-         transform: 'skewY(-5deg)',
-        transformOrigin: ' 0 100%',
-        color:'primary'
-      },
-      
-      "&.active": {
-        color: "primary",
-        transform: 'skewY(-3deg)',
-        transformOrigin: 'bottom left',
-        
-      },
-    }}
-  >
-    {props.children}
-  </Link>
-
+  <>
     
-          
-    </div>
+    <LinkWrapper>
+      <UnderLayer></UnderLayer>
+    
+        <NavLInk as={Link}
+      to={props.to}
+      activeClassName="active"
+      
+    >
+      {props.children}
+    </NavLInk>
 
+      
+            
+      </LinkWrapper>
+
+  </>
+    
   
 )
