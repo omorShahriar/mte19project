@@ -15,7 +15,7 @@ const WeekDay = ({info}) => {
     return (
         
             
-            <div className={`${style.test} ${open && style.collapseOpen}` } sx={{textAlign:'center',backgroundColor:'#333',height:50,color:'#f2f2f2'}}>
+            <div className={`${style.test} ${open && style.collapseOpen}` } sx={{textAlign:'center',backgroundColor:'background',height:50,color:'text'}}>
             
                 <h3  className={`${style.header} ${open && style.headerShadow}`} onClick={() => setOpen(!open)}>{info.day}</h3>
                 <CSSTransition in={open} timeout={{
