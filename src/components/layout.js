@@ -21,6 +21,7 @@ body {
   --text: #333;
   --primary: #1a8fe3;
   --accent: #ff9000;
+  --buttonShadow :  rgba(51, 51, 51, 0.25);
   background-color: var(--bg);
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -30,6 +31,7 @@ body.dark {
   --text: #f2f2f2;
   --primary: #1a8fe3;
   --accent: #ff9000;
+  --buttonShadow: rgba(242, 242, 242, 0.25);
   background-color: var(--bg);
   margin: 0;
 }
