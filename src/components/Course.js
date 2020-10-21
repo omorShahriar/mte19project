@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 const CourseBox = styled.div`
   position: relative;
-  background-color: ${({ theme }) => theme.body};
+  background-color: var(--bg);
 
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
   display: inline-block;
@@ -18,7 +18,7 @@ const CourseBox = styled.div`
     left: -5px;
     width: 80%;
     height: 80%;
-    background-color: ${({ theme }) => theme.accent};
+    background-color: var(--accent);
     border-radius: 15px 5px;
   }
   &::after {
@@ -29,7 +29,7 @@ const CourseBox = styled.div`
     right: -5px;
     width: 80%;
     height: 80%;
-    background-color: ${({ theme }) => theme.accent};
+    background-color: var(--accent);
     border-radius: 15px 5px;
   }
 `
@@ -42,10 +42,18 @@ const CourseContent = styled.ul`
   grid-template-row: repeat{6,auto};
   align-items:center;
   li {
-    color: ${({ theme }) => theme.text};
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--text);
+     @media (max-width:900px) {
+       & {
+         font-size: 1rem;
+    line-height: 1.25rem;
+       }
+     }
   }
   a {
-    color: ${({ theme }) => theme.accent};
+    color: var(--accent);
     text-decoration: none;
     font-size: 1.5rem;
     text-transform: uppercase;

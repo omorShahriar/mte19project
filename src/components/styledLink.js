@@ -12,17 +12,17 @@ const UnderLayer = styled.div`
   left: 0;
   width: 150px;
   height: 50px;
-  background-color: #1a8fe3;
+  background-color: var(--primary);
   border-radius: 15px 5px;
   box-shadow: inset -5px -5px 15px 5px rgba(0, 0, 0, 0.25);
 `
 
 const NavLInk = styled.a`
   text-align: center;
-  color: ${({ theme }) => theme.body};
+  color: var(--bg);
   display: inline-block;
   text-decoration: none;
-  background-color: ${({ theme }) => theme.text};
+  background-color: var(--text);
   border-radius: 15px 5px;
   font-size: 1rem;
   width: 150px;
@@ -45,7 +45,7 @@ const NavLInk = styled.a`
     transform-origin: bottom left;
   }
 `
-export default ({ to, theme, children }) => (
+export default ({ to, children }) => (
   <>
     <LinkWrapper>
       <UnderLayer></UnderLayer>

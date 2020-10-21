@@ -1,6 +1,6 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link, graphql } from "gatsby"
+import React from "react"
+
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -21,7 +21,7 @@ const WeekDaysWrapper = styled.div`
   position: relative;
   z-index: 0;
 `
-const DigitalRoutine = ({ theme, data }) => {
+const DigitalRoutine = ({ data }) => {
   const routine = data.allContentfulRoutine.nodes[0]
 
   return (
@@ -35,7 +35,7 @@ const DigitalRoutine = ({ theme, data }) => {
       </RoutineInfoWrapper>
       <WeekDaysWrapper>
         {routine.weekDays.map(info => (
-          <WeekDay info={info} />
+          <WeekDay key={info.id} info={info} />
         ))}
       </WeekDaysWrapper>
     </Layout>

@@ -1,4 +1,5 @@
 const dotenv = require("dotenv")
+
 if (process.env.NODE_ENV !== "production") {
   dotenv.config()
 }
@@ -10,7 +11,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    "gatsby-plugin-theme-ui",
+    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,9 +20,10 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

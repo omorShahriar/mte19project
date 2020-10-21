@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
 import React from "react"
 
 import { useState } from "react"
@@ -11,8 +9,8 @@ import Course from "../components/Course"
 
 const DayWrapper = styled.div`
   text-align: center;
-  background-color: ${({ theme }) => theme.body};
-  color: ${({ theme }) => theme.text};
+  background-color: var(--bg);
+  color: var(--text);
   position: relative;
   height: 50px;
   width: 80%;
@@ -27,7 +25,7 @@ const DayWrapper = styled.div`
     left: -5px;
     width: 40%;
     height: 60%;
-    background-color: ${({ theme }) => theme.primary};
+    background-color: var(--primary);
     border-radius: 15px 5px;
   }
   &::after {
@@ -38,7 +36,7 @@ const DayWrapper = styled.div`
     right: -5px;
     width: 40%;
     height: 60%;
-    background-color: ${({ theme }) => theme.primary};
+    background-color: var(--primary);
     border-radius: 15px 5px;
   }
 `
@@ -59,8 +57,8 @@ const DayHeader = styled.button`
   outline: none;
   font-size: 1.5rem;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-  background-color: ${({ theme }) => theme.body};
-  color: ${({ theme }) => theme.text};
+  background-color: var(--bg);
+  color: var(--text);
 `
 const CourseContainer = styled.div`
   position: absolute;
@@ -101,9 +99,14 @@ const WeekDay = ({ info }) => {
         unmountOnExit
       >
         <CourseContainer>
-          {info.courses.map(c => (
-            <Course key={c.id} courseData={c} />
-          ))}
+          {info.courses.map(c => {
+            return (
+              <Course
+                key={`_${Math.random().toString(36).substr(2, 9)}`}
+                courseData={c}
+              />
+            )
+          })}
         </CourseContainer>
       </CSSTransition>
     </DayWrapper>

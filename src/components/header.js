@@ -1,12 +1,12 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+import React from "react"
+
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import StyledLink from "./styledLink"
 import Toggle from "./Toogle"
 
 const HeaderContainer = styled.header`
-  background-color: ${({ theme }) => theme.body};
+  background-color: var(--bg);
   transition: 0.3s;
   position: relative;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
 
 const HeadingOne = styled.h1`
   text-align: center;
-  color: ${({ theme }) => theme.text};
+  color: var(--text);
   transition: 0.3s;
 `
 const NavWrapper = styled.nav`
@@ -30,7 +30,7 @@ const NavWrapper = styled.nav`
   gap:25px;
   }
 `
-const Header = ({ theme, changeTheme, siteTitle }) => (
+const Header = ({ siteTitle }) => (
   <HeaderContainer>
     <div
       style={{
@@ -44,7 +44,7 @@ const Header = ({ theme, changeTheme, siteTitle }) => (
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/digital-routine">Digital Routine</StyledLink>
         <StyledLink to="/page-2"> experiment page</StyledLink>
-        <Toggle changeTheme={changeTheme} />
+        <Toggle />
       </NavWrapper>
     </div>
   </HeaderContainer>
