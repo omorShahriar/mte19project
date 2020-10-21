@@ -37,13 +37,13 @@ const ColorSwitch = styled.div`
 `
 const HiddenSwitch = styled.input`
   border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
+  ${"" /* clip: rect(0 0 0 0); */}
+  height: 10px;
+  margin: -10px;
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px;
+  width: 10px;
 `
 
 const Toggle = () => {
