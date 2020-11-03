@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://www.kuetmte.wtf`,
     title: `KUET MTE 19 PROJECT`,
     description: `A place for centralizing study materials, & increase ease of use of online class`,
     author: `@omorshahriar`,
@@ -12,6 +13,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-source-filesystem`,
